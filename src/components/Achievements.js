@@ -262,7 +262,7 @@ const Achievements = () => {
           <LogoName>CEHv12</LogoName>
         </LogoItem>
         <LogoItem>
-          <LogoImage src={require('../assets/images/codechefsilver.svg')} alt="CodeChef" />
+          <LogoImage src={require('../assets/images/codechefsilver.png')} alt="CodeChef" />
           <LogoName>CodeChef</LogoName>
         </LogoItem>
         <LogoItem>
