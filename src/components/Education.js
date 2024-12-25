@@ -1,9 +1,5 @@
 import React from 'react';
-
-
 import styled, { keyframes } from 'styled-components'; // Added keyframes
-
-
 import { FaArrowRight } from 'react-icons/fa';
 
 // Fade-in animation for Education Cards
@@ -15,6 +11,16 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+`;
+
+// Hover scale animation for Education Cards
+const scaleOnHover = keyframes`
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
   }
 `;
 
@@ -43,7 +49,7 @@ const EducationList = styled.div`
   position: relative;
 `;
 
-// Education Card (Circular)
+// Education Card (Circular) with Hover Animation
 const EducationCard = styled.div`
   background-color: #000;
   padding: 2rem;
@@ -56,6 +62,11 @@ const EducationCard = styled.div`
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: ${fadeIn} 0.8s ease-in-out;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    animation: ${scaleOnHover} 0.3s forwards;
+  }
 `;
 
 // Education Card Title
@@ -82,11 +93,12 @@ const EducationLogo = styled.img`
   margin-bottom: 1rem;
 `;
 
-// Arrow Connector
+// Arrow Connector with Animation for movement
 const Arrow = styled.div`
   position: absolute;
   color: #fff;
   font-size: 1.5rem;
+  transition: transform 0.3s ease;
 
   // Arrow positioning between cards
   &:nth-child(2) {
@@ -97,6 +109,10 @@ const Arrow = styled.div`
   &:nth-child(3) {
     left: 75%;
     transform: translateX(-50%);
+  }
+
+  &:hover {
+    transform: translateY(-10px);
   }
 `;
 
@@ -113,25 +129,22 @@ const Education = () => {
             Vellore Institute of Technology, CGPA : 8.35  | 2021 - 2025
           </EducationCardDescription>
           <EducationLogo src={require('../assets/images/vit.png')} alt="vit Logo" />
-
         </EducationCard>
 
          {/* Education Example 3 */}
         <EducationCard>
           <EducationCardTitle>Higher Secondary School</EducationCardTitle>
           <EducationCardDescription>
-          International Public School, CGPA : 8.42 | 2019 - 2020
-
+            International Public School, CGPA : 8.42 | 2019 - 2020
           </EducationCardDescription>
           <EducationLogo src={require('../assets/images/ips.jpeg')} alt="ips Logo" />
-
         </EducationCard>
         
         {/* Education Example 2 */}
         <EducationCard>
           <EducationCardTitle>Secondary School</EducationCardTitle>
           <EducationCardDescription>
-          International Public School, CGPA : 7.72 | 2018 - 2019
+            International Public School, CGPA : 7.72 | 2018 - 2019
           </EducationCardDescription>
           <EducationLogo src={require('../assets/images/ips.jpeg')} alt="ips Logo" />
         </EducationCard>
@@ -140,13 +153,10 @@ const Education = () => {
         <EducationCard>
           <EducationCardTitle>Primary School</EducationCardTitle>
           <EducationCardDescription>
-          Billabong High International School | 2006 - 2011
+            Billabong High International School | 2006 - 2011
           </EducationCardDescription>
           <EducationLogo src={require('../assets/images/billabong.png')} alt="billabong Logo" />
         </EducationCard>
-        
-
-        
 
         {/* Add more education items as needed */}
       </EducationList>

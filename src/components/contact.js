@@ -10,10 +10,9 @@ const ContactSection = styled.div`
   background: linear-gradient(135deg, #1e1e2f, #28293e);
   color: white;
   min-height: 100vh;
-  position: relative; /* Required for positioning the image */
+  position: relative;
 `;
 
-// Wrapper for content and form
 // Wrapper for content and form
 const ContentWrapper = styled.div`
   display: flex;
@@ -22,11 +21,9 @@ const ContentWrapper = styled.div`
   align-items: center;
   max-width: 500px;
   width: 100%;
-  z-index: 2; /* Ensure content stays above the image */
-  margin-left: -50%; /* Shift form to the left by 10% */
+  z-index: 2;
+  margin-left: -10%;
 `;
-
-
 
 // Title styling
 const Title = styled.h1`
@@ -58,7 +55,7 @@ const Label = styled.label`
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
   color: #333;
-  font-weight: bold; 
+  font-weight: bold;
 `;
 
 // Input field styles
@@ -68,7 +65,7 @@ const Input = styled.input`
   width: 90%;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color:rgb(159, 190, 211) ;
+  background-color: rgb(159, 190, 211);
 
   &:focus {
     outline: none;
@@ -84,7 +81,7 @@ const Textarea = styled.textarea`
   height: 120px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color:rgb(159, 190, 211);
+  background-color: rgb(159, 190, 211);
   resize: vertical;
 
   &:focus {
@@ -119,33 +116,33 @@ const ResponseMessage = styled.div`
 // Styled image for the right corner
 const ProfileImage = styled.img`
   position: absolute;
-  top: 25%;         /* Positioning from top */
-  right: 20%;        /* Positioning from right */
-  width: 220px;     /* Adjust width */
-  height: 220px;    /* Adjust height */
-  border-radius: 5%; /* Circular image */
-  border: 3px solid #fff;  /* Optional border around the image */
-  object-fit: cover; /* Ensures the image covers the given dimensions without stretching */
+  top: 25%;
+  right: 10%;
+  width: 220px;
+  height: 220px;
+  border-radius: 5%;
+  border: 3px solid #fff;
+  object-fit: cover;
   z-index: 1;
 `;
 
 // Container for the contact details (phone number and email)
 const ContactDetails = styled.div`
   position: absolute;
-  top: 60%;         /* Adjust positioning below the image */
-  right: 18%;        /* Positioning from the right */
+  top: 60%;
+  right: 8%;
   color: white;
   font-size: 1rem;
   text-align: center;
   z-index: 1;
 `;
 
-
-// Styling for each contact detail (phone number and email) (making the text bold)
+// Styling for each contact detail (phone number and email)
 const ContactItem = styled.p`
   margin: 5px 0;
-  font-weight: bold;  /* Making the contact details text bold */
+  font-weight: bold;
 `;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -162,14 +159,34 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  // Correcting handleSubmit to be async and handle fetch correctly
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Simple form validation
     if (formData.name && formData.email && formData.message) {
-      setResponse('Thank you for contacting me! Your message has been sent.');
-      setTimeout(() => setResponse(''), 4000); // Clear response after 4 seconds
-      setFormData({ name: '', email: '', message: '' }); // Reset form
+      try {
+        const res = await fetch('http://localhost:5000/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        // Check if the response is successful
+        if (res.ok) {
+          setResponse('Thank you for contacting me! Your message has been sent.');
+          setTimeout(() => setResponse(''), 4000); // Clear response after 4 seconds
+          setFormData({ name: '', email: '', message: '' }); // Reset form
+        } else {
+          // Handle non-OK response (server error)
+          setResponse('There was an error sending your message. Please try again later.');
+        }
+      } catch (error) {
+        // Handle network errors or other issues
+        setResponse('Network error. Please check your internet connection and try again.');
+      }
     } else {
       setResponse('Please fill out all fields.');
     }
@@ -185,8 +202,6 @@ const Contact = () => {
         <ContactItem>Phone: +91 7906472146</ContactItem>
         <ContactItem>Email: hiyasdrive@gmail.com</ContactItem>
         <ContactItem>Location: Meerut, Uttar Pradesh, India</ContactItem>
-
-
       </ContactDetails>
 
       <ContentWrapper>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -10,9 +9,9 @@ const Nav = styled.nav`
   background: #000;
   color: white;
   position: fixed;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
   border-radius: 50px;
   border: 2px solid white;
@@ -29,22 +28,6 @@ const Logo = styled.h1`
   margin: 0;
   color: white;
   letter-spacing: 1px;
-  animation: fadeInSlide 2s ease-in-out;
-
-  @keyframes fadeInSlide {
-    0% {
-      opacity: 0;
-      transform: translateX(-50%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
 `;
 
 const NavLinks = styled.div`
@@ -64,7 +47,7 @@ const NavLinks = styled.div`
   }
 `;
 
-const NavLink = styled.a`
+const StyledLink = styled.a`
   color: white;
   text-decoration: none;
   font-size: 1rem;
@@ -72,7 +55,7 @@ const NavLink = styled.a`
   font-weight: 700;
   position: relative;
   transition: color 0.3s ease, transform 0.3s ease;
-  animation: fadeIn 1s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     color: #f5a623;
@@ -93,17 +76,6 @@ const NavLink = styled.a`
   &:hover::after {
     width: 100%;
     left: 0;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 `;
 
@@ -127,16 +99,24 @@ const MenuToggle = styled.div`
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setMenuOpen(false);
+    }
+  };
+
   return (
     <Nav>
       <Logo>Hiya Sharma</Logo>
       <NavLinks open={menuOpen}>
-        <NavLink href="#hero">About</NavLink>
-        <NavLink href="#projects">Projects</NavLink>
-        <NavLink href="#blogs">Blogs</NavLink>
-        <NavLink href="#education">Education</NavLink>
-        <NavLink href="#achievements">Achievements & Awards</NavLink>
-        <NavLink href="#contact">Contact</NavLink>
+        <StyledLink onClick={() => handleScroll('hero')}>About</StyledLink>
+        <StyledLink onClick={() => handleScroll('projects')}>Projects</StyledLink>
+        <StyledLink onClick={() => handleScroll('blogs')}>Blogs</StyledLink>
+        <StyledLink onClick={() => handleScroll('education')}>Education</StyledLink>
+        <StyledLink onClick={() => handleScroll('achievements')}>Achievements</StyledLink>
+        <StyledLink onClick={() => handleScroll('contact')}>Contact</StyledLink>
       </NavLinks>
       <MenuToggle onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
