@@ -132,7 +132,7 @@ const Blogs = () => {
         </BlogPost>
       </ContentWrapper>
 
-     
+    
     </BlogsSection>
   );
 };

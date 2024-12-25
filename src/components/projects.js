@@ -94,7 +94,7 @@ const Projects = () => {
           Developed a Python-based SIEM tool to monitor and analyze Windows Defender Firewall logs. Automated anomaly detection, including blocked UDP protocols, reducing security risks by 25%. Integrated real-time updates and an alert-generation system, enhancing threat response efficiency by 40%. Utilized libraries like tkinter, os, and time for effective log tracking and system monitoring.</ProjectDescription>
           <ProjectLink href="https://github.com/hiyasharma/FirewallMonitor-Pro-SIEM-Tool-" target="_blank">
             View on GitHub  
-            <ProjectLogo src="/assets/images/FireMon.png" alt="Firewall Monitor Logo" /> 
+            <ProjectLogo src={require('../assets/images/FireMon.png')} alt="Firewall Monitor Logo" /> 
           </ProjectLink>
         </ProjectCard>
 
@@ -106,19 +106,19 @@ const Projects = () => {
           </ProjectDescription>
           <ProjectLink href="https://github.com/hiyasharma/Malware-Analysis-Tool" target="_blank">
             View on GitHub
-            <ProjectLogo src="/assets/images/InvisiScan.png" alt="InvisiScan Logo" />
+            <ProjectLogo src={require('../assets/images/InvisiScan.png')} alt="InvisiScan Logo" />
           </ProjectLink>
         </ProjectCard>
 
        {/* Example Project 3 */}
-       <ProjectCard>
+      <ProjectCard>
           <ProjectTitle>Bank Guard Pro</ProjectTitle>
           <ProjectDescription>
           Developed a secure Java-based banking platform handling over 10,000 transactions. Implemented multifactor authentication, reducing unauthorized access attempts by 50%. Addressed OWASP Top 10 vulnerabilities, ensuring a 99% secure platform. Integrated a honeypot feature, logging 100+ unauthorized access attempts. Strengthened data protection measures, improving overall threat detection by 30%.
           </ProjectDescription>
           <ProjectLink href="https://github.com/yourusername/project-one" target="_blank">
             View on GitHub
-            <ProjectLogo src="/assets/images/BankGuard.png" alt="BankGuard Logo" />
+            <ProjectLogo src={require('../assets/images/BankGuard.png')} alt="BankGuard Logo" />
           </ProjectLink>
         </ProjectCard>
 
@@ -131,7 +131,7 @@ const Projects = () => {
           </ProjectDescription>
           <ProjectLink href="https://github.com/yourusername/project-one" target="_blank">
             View on GitHub
-            <ProjectLogo src="/assets/images/SCAMSniffer.png" alt="SCAM sniffer Logo" />
+            <ProjectLogo src={require('../assets/images/SCAMSniffer.png')} alt="SCAM sniffer Logo" />
           </ProjectLink>
         </ProjectCard>
 

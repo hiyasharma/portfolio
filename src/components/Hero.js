@@ -154,19 +154,19 @@ const Hero = () => {
           <HeroSection isLoaded={isLoaded}>
             <ContentWrapper>
               <ImageContainer>
-                <Image src="/assets/images/hiya-sharma.png" alt="Hiya Sharma" />
+                <Image src={require('../assets/images/hiya-sharma.png')} alt="Hiya Sharma" />
                 <LinksContainer>
                   <Link href="https://www.linkedin.com/in/hiyasdrive/" target="_blank">
-                    <img src="/assets/images/linkedin-logo.png" alt="LinkedIn" />
+                    <img src={require('../assets/images/linkedin-logo.png')} alt="LinkedIn" />
                   </Link>
                   <Link href="https://github.com/hiyasharma" target="_blank">
-                    <img src="/assets/images/github-logo.png" alt="GitHub" />
+                    <img src={require('../assets/images/github-logo.png')} alt="GitHub" />
                   </Link>
                   <Link href="https://leetcode.com/u/hiyasdrive/" target="_blank">
-                    <img src="/assets/images/leetcode-logo.png" alt="LeetCode" />
+                    <img src={require('../assets/images/leetcode-logo.png')} alt="LeetCode" />
                   </Link>
                   <Link href="https://medium.com/@hiyasdrive" target="_blank">
-                    <img src="/assets/images/medium-logo.png" alt="Medium" />
+                    <img src={require('../assets/images/medium-logo.png')} alt="Medium" />
                   </Link>
                 </LinksContainer>
               </ImageContainer>

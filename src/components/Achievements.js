@@ -151,7 +151,7 @@ const Achievements = () => {
       <AchievementsList>
         {/* Achievement Example 1 with Custom Logo */}
         <AchievementCard>
-          <AchievementLogo src="/assets/images/CEA-logo.gif" alt="CEH Logo" />
+          <AchievementLogo src={require('../assets/images/CEA-logo.gif')} alt="CEH Logo" />
           <AchievementCardTitle>Certified Ethical Hacker (CEH) v12</AchievementCardTitle>
           <AchievementCardDescription>
           Validated expertise in ethical hacking techniques and penetration testing to secure systems.
@@ -174,7 +174,7 @@ const Achievements = () => {
 
         {/* Achievement Example 3 with Custom Logo */}
         <AchievementCard>
-          <AchievementLogo src="/assets/images/nptel.jpeg" alt="nptel Logo" />
+          <AchievementLogo src={require('../assets/images/nptel.jpeg')} alt="nptel Logo" />
           <AchievementCardTitle>Blockchain and its Applications</AchievementCardTitle>
           <AchievementCardDescription>
           Certified in foundational blockchain technology and its real-world applications.          </AchievementCardDescription>
@@ -185,8 +185,8 @@ const Achievements = () => {
 
 
        {/* Achievement Example 4 with Custom Logo */}
-       <AchievementCard>
-          <AchievementLogo src="/assets/images/hackerrank.webp" alt="hackerrank Logo" />
+      <AchievementCard>
+          <AchievementLogo src={require('../assets/images/hackerrank.webp')} alt="hackerrank Logo" />
           <AchievementCardTitle>Java Basics - HackerRank Certificate</AchievementCardTitle>
           <AchievementCardDescription>
           Certifies skills in Java fundamentals, including syntax, data types, and control structures.          </AchievementCardDescription>
@@ -196,8 +196,8 @@ const Achievements = () => {
         </AchievementCard>
 
         {/* Achievement Example 5 with Custom Logo */}
-       <AchievementCard>
-          <AchievementLogo src="/assets/images/ec.png" alt="ec council Logo" />
+      <AchievementCard>
+          <AchievementLogo src={require('../assets/images/ec.png')} alt="ec council Logo" />
           <AchievementCardTitle>Linux Command Line</AchievementCardTitle>
           <AchievementCardDescription>
           Certifies expertise in mastering Linux commands for effective system administration and automation tasks.         </AchievementCardDescription>
@@ -207,8 +207,8 @@ const Achievements = () => {
         </AchievementCard>
 
         {/* Achievement Example 6 with Custom Logo */}
-       <AchievementCard>
-          <AchievementLogo src="/assets/images/michi.jpeg" alt="michigan Logo" />
+      <AchievementCard>
+          <AchievementLogo src={require('../assets/images/michi.jpeg')} alt="michigan Logo" />
           <AchievementCardTitle>Applied Machine Learning in Python</AchievementCardTitle>
           <AchievementCardDescription>
           Gained practical knowledge of machine learning techniques using Python for real-world problem-solving         </AchievementCardDescription>
@@ -219,7 +219,7 @@ const Achievements = () => {
 
         {/* Achievement Example 7 with Custom Logo */}
         <AchievementCard>
-          <AchievementLogo src="/assets/images/smart.jpeg" alt="smart Logo" />
+          <AchievementLogo src={require('../assets/images/smart.jpeg')} alt="smart Logo" />
           <AchievementCardTitle>AI for CyberSecurity with IBM QRadar</AchievementCardTitle>
           <AchievementCardDescription>
           Gained hands-on experience in AI-driven threat detection using IBM QRadar during the SmartInternz externship.        </AchievementCardDescription>
@@ -230,7 +230,7 @@ const Achievements = () => {
 
         {/* Achievement Example 8 with Custom Logo */}
         <AchievementCard>
-          <AchievementLogo src="/assets/images/cognitive.png" alt="cognitive Logo" />
+          <AchievementLogo src={require('../assets/images/cognitive.png')} alt="cognitive Logo" />
           <AchievementCardTitle>Data Science Methodology</AchievementCardTitle>
           <AchievementCardDescription>
           Learned data science methodologies for real-world problem solving through IBM's Cognitive Class certificate.       </AchievementCardDescription>
@@ -250,23 +250,23 @@ const Achievements = () => {
       {/* Logos Section */}
       <LogosSection>
         <LogoItem>
-          <LogoImage src="/assets/images/leetcode.gif" alt="leetcode" />
+          <LogoImage src={require('../assets/images/leetcode.gif')} alt="leetcode" />
           <LogoName>Leetcode</LogoName>
         </LogoItem>
         <LogoItem>
-          <LogoImage src="/assets/images/archade.gif" alt="Archade" />
+          <LogoImage src={require('../assets/images/archade.gif')} alt="Archade" />
           <LogoName>Google Cloud</LogoName>
         </LogoItem>
         <LogoItem>
-          <LogoImage src="/assets/images/CEH_badge.png" alt="EC Council" />
+          <LogoImage src={require('../assets/images/CEH_badge.png')} alt="EC Council" />
           <LogoName>CEHv12</LogoName>
         </LogoItem>
         <LogoItem>
-          <LogoImage src="/assets/images/codechefsilver.svg" alt="CodeChef" />
+          <LogoImage src={require('../assets/images/codechefsilver.svg')} alt="CodeChef" />
           <LogoName>CodeChef</LogoName>
         </LogoItem>
         <LogoItem>
-          <LogoImage src="/assets/images/python.png" alt="Hackerrank" />
+          <LogoImage src={require('../assets/images/python.png')} alt="Hackerrank" />
           <LogoName>HackerRank</LogoName>
         </LogoItem>
       </LogosSection>

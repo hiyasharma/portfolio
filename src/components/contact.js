@@ -178,7 +178,7 @@ const Contact = () => {
   return (
     <ContactSection>
       {/* Profile image */}
-      <ProfileImage src="/assets/images/hiya.jpg" alt="hiya" />
+      <ProfileImage src={require('../assets/images/hiya.jpg')} alt="hiya" />
 
       {/* Contact details (Phone and Email) */}
       <ContactDetails>

@@ -112,18 +112,18 @@ const Education = () => {
           <EducationCardDescription>
             Vellore Institute of Technology, CGPA : 8.35  | 2021 - 2025
           </EducationCardDescription>
-          <EducationLogo src="/assets/images/vit.png" alt="vit Logo" />
+          <EducationLogo src={require('../assets/images/vit.png')} alt="vit Logo" />
 
         </EducationCard>
 
          {/* Education Example 3 */}
-         <EducationCard>
+        <EducationCard>
           <EducationCardTitle>Higher Secondary School</EducationCardTitle>
           <EducationCardDescription>
           International Public School, CGPA : 8.42 | 2019 - 2020
 
           </EducationCardDescription>
-          <EducationLogo src="/assets/images/ips.jpeg" alt="ips Logo" />
+          <EducationLogo src={require('../assets/images/ips.jpeg')} alt="ips Logo" />
 
         </EducationCard>
         
@@ -133,7 +133,7 @@ const Education = () => {
           <EducationCardDescription>
           International Public School, CGPA : 7.72 | 2018 - 2019
           </EducationCardDescription>
-          <EducationLogo src="/assets/images/ips.jpeg" alt="ips Logo" />
+          <EducationLogo src={require('../assets/images/ips.jpeg')} alt="ips Logo" />
         </EducationCard>
         
         {/* Education Example 1 */}
@@ -142,7 +142,7 @@ const Education = () => {
           <EducationCardDescription>
           Billabong High International School | 2006 - 2011
           </EducationCardDescription>
-          <EducationLogo src="/assets/images/billabong.png" alt="billabong Logo" />
+          <EducationLogo src={require('../assets/images/billabong.png')} alt="billabong Logo" />
         </EducationCard>
         
 
