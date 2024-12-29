@@ -14,6 +14,25 @@ const fadeIn = keyframes`
   }
 `;
 
+// Bounce animation for the section title
+const bounceIn = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
 // Hover scale animation for Education Cards
 const scaleOnHover = keyframes`
   from {
@@ -28,16 +47,30 @@ const scaleOnHover = keyframes`
 const EducationSection = styled.section`
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #1e1e2f, #28293e);
-  color: #fff;
+  color: #333;
   text-align: center;
+  position: relative; /* for the title shadow animation */
+  animation: sectionTitleShadow 1.5s ease-in-out infinite alternate;
 `;
 
-// Title for the Education Section
+// Title for the Education Section with animation and style improvements
 const EducationTitle = styled.h2`
-  font-size: 2.5rem;
+   font-size: 3.5rem;
   color: #fff;
   margin-bottom: 3rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Dancing Script', cursive;
+  animation: titleShadow 1.5s ease-in-out infinite alternate;
+
+  @keyframes titleShadow {
+    0% {
+      text-shadow: 0 0 8px rgba(255, 105, 180, 1), 0 0 15px rgba(255, 105, 180, 1);
+    }
+    100% {
+      text-shadow: 0 0 12px rgba(255, 165, 0, 1), 0 0 25px rgba(255, 165, 0, 1);
+    }
+  }
+  
+ 
 `;
 
 // Container for the education items
@@ -54,18 +87,22 @@ const EducationCard = styled.div`
   background-color: #000;
   padding: 2rem;
   border-radius: 50%;
-  width: 280px;
-  height: 280px;
+  width: 270px;
+  height: 270px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: ${fadeIn} 0.8s ease-in-out;
-  transition: transform 0.3s ease;
+  
+  box-shadow: 0 8px 15px rgba(147, 151, 32, 0.2);
+  //animation: ${fadeIn} 0.8s ease-in-out;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     animation: ${scaleOnHover} 0.3s forwards;
+    box-shadow: 0 15px 20px rgba(166, 227, 10, 0.4); // Shadow grows on hover
+    border-color: #ff4500; // Change border color on hover
   }
 `;
 
@@ -131,7 +168,7 @@ const Education = () => {
           <EducationLogo src={require('../assets/images/vit.png')} alt="vit Logo" />
         </EducationCard>
 
-         {/* Education Example 3 */}
+        {/* Education Example 3 */}
         <EducationCard>
           <EducationCardTitle>Higher Secondary School</EducationCardTitle>
           <EducationCardDescription>

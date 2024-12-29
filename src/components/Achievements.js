@@ -24,10 +24,20 @@ const AchievementsSection = styled.section`
 
 // Title for the Achievements Section
 const AchievementsTitle = styled.h2`
-  font-size: 2.5rem;
+   font-size: 4rem;
   color: #fff;
   margin-bottom: 3rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Dancing Script', cursive;
+  animation: titleShadow 1.5s ease-in-out infinite alternate;
+
+  @keyframes titleShadow {
+    0% {
+      text-shadow: 0 0 8px rgba(255, 105, 180, 1), 0 0 15px rgba(255, 105, 180, 1);
+    }
+    100% {
+      text-shadow: 0 0 12px rgba(255, 165, 0, 1), 0 0 25px rgba(255, 165, 0, 1);
+    }
+  }
 `;
 
 // Container for the achievements items
@@ -48,11 +58,19 @@ const AchievementCard = styled.div`
   width: 280px;
   height: 280px;
   display: flex;
+  margin-bottom: 5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: ${fadeIn} 0.8s ease-in-out;
+  &:hover {
+    transform: scale(1.05); /* Slight zoom-in effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 6px 8px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 165, 0, 0.8); /* Highlighted border on hover */
+  }
 `;
 
 // Achievement Card Title
@@ -85,6 +103,7 @@ const TrophyIcon = styled(FaTrophy)`
   font-size: 2.5rem;
   color: #ffd700; /* Gold color */
   margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
 `;
 
 // View Certificate Link
@@ -100,17 +119,35 @@ const CertificateLink = styled.a`
   }
 `;
 const TitleBadge = styled.div`
-  background-color: #ffd700; /* Gold background */
-  color: #1e1e2f; /* Dark text */
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 3rem;
-  display: inline-block;
+  font-size: 4rem; /* Slightly larger for more impact */
+  color: #fff;
+  margin-bottom: 5rem;
+  font-family: 'Dancing Script', cursive;
   text-align: center;
-  border: 2px solid black;
+  letter-spacing: 2px;
+  animation: titleGlow 1.8s ease-in-out infinite alternate;
+
+  @keyframes titleGlow {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 105, 180, 1), 0 0 20px rgba(255, 105, 180, 1), 
+                   0 0 30px rgba(255, 20, 147, 1), 0 0 40px rgba(255, 20, 147, 1);
+    }
+    50% {
+      text-shadow: 0 0 15px rgba(255, 140, 0, 1), 0 0 30px rgba(255, 140, 0, 1),
+                   0 0 45px rgba(255, 69, 0, 1), 0 0 60px rgba(255, 69, 0, 1);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(0, 191, 255, 1), 0 0 35px rgba(0, 191, 255, 1),
+                   0 0 50px rgba(30, 144, 255, 1), 0 0 70px rgba(30, 144, 255, 1);
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    transition: transform 0.3s ease-in-out;
+  }
 `;
+
 
 
 // Logos Section
@@ -131,8 +168,8 @@ const LogoItem = styled.div`
 
 // Logo Image
 const LogoImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 0.5rem;
 `;
 
@@ -266,7 +303,7 @@ const Achievements = () => {
           <LogoName>CodeChef</LogoName>
         </LogoItem>
         <LogoItem>
-          <LogoImage src={require('../assets/images/python.png')} alt="Hackerrank" />
+          <LogoImage src={require('../assets/images/python.jpeg')} alt="Hackerrank" />
           <LogoName>HackerRank</LogoName>
         </LogoItem>
       </LogosSection>

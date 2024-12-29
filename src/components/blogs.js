@@ -2,30 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Styled button for the "Read the full blog" link
-
 const BlogButton = styled.a`
   display: inline-block;
   padding: 0.8rem 2rem;
   background-color: white;
-  color: #3498db; /* Blue text color */
+  color: #3498db;
   font-size: 1rem;
   text-align: center;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
   margin-top: 1rem;
-  border: 2px solid #3498db; /* Blue border to match text color */
+  border: 2px solid #3498db;
 
   &:hover {
-    background-color: #3498db; /* Blue background on hover */
-    color: white; /* White text on hover */
-    transform: translateY(-3px); /* Slight lift effect */
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-3px);
   }
 
   &:active {
-    background-color: #2980b9; /* Darker blue on click */
-    color: white; /* White text on click */
-    transform: translateY(0); /* Reset lift effect when clicked */
+    background-color: #2980b9;
+    color: white;
+    transform: translateY(0);
   }
 `;
 
@@ -40,6 +39,20 @@ const BlogsSection = styled.div`
   color: white;
   min-height: 100vh;
   position: relative;
+  animation: fadeIn 2s ease-in-out;
+  
+  
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 // Wrapper for blog content
@@ -51,21 +64,36 @@ const ContentWrapper = styled.div`
 
 // Title for the blogs page
 const Title = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 3.5rem;
   color: #fff;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  margin-bottom: 3rem;
+  font-family: 'Dancing Script', cursive;
+  animation: titleShadow 1.5s ease-in-out infinite alternate;
+
+  @keyframes titleShadow {
+    0% {
+      text-shadow: 0 0 8px rgba(255, 105, 180, 1), 0 0 15px rgba(255, 105, 180, 1);
+    }
+    100% {
+      text-shadow: 0 0 12px rgba(255, 165, 0, 1), 0 0 25px rgba(255, 165, 0, 1);
+    }
+  }
 `;
 
 // Blog post container
 const BlogPost = styled.div`
-  background-color: #fff;
+  background-color: rgb(254, 246, 215);
   padding: 2rem;
   border-radius: 10px;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 9px rgba(197, 25, 25, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(225, 62, 162, 0.3);
+  }
+    border-color: rgba(222, 14, 52, 0.8); /* Highlighted border on hover */
 `;
 
 // Blog title (making the text bold)

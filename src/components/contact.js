@@ -27,11 +27,20 @@ const ContentWrapper = styled.div`
 
 // Title styling
 const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 3.5rem;
   color: #fff;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
+  margin-bottom: 3rem;
+  font-family: 'Dancing Script', cursive;
+  animation: titleShadow 1.5s ease-in-out infinite alternate;
+
+  @keyframes titleShadow {
+    0% {
+      text-shadow: 0 0 8px rgba(255, 105, 180, 1), 0 0 15px rgba(255, 105, 180, 1);
+    }
+    100% {
+      text-shadow: 0 0 12px rgba(255, 165, 0, 1), 0 0 25px rgba(255, 165, 0, 1);
+    }
+  }
 `;
 
 // Form container
@@ -39,10 +48,10 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #fff;
+  background-color: rgb(254, 246, 215);
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 9px 15px rgba(235, 16, 187, 0.1);
 `;
 
 // Form group container for each field
