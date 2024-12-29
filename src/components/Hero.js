@@ -27,7 +27,7 @@ const LoadingAnimation = styled.div`
 `;
 
 const Signature = styled.h2`
-   font-size: 3.5rem;
+  font-size: 3.5rem;
   color: #fff;
   margin-bottom: 3rem;
   font-family: 'Dancing Script', cursive;
@@ -63,6 +63,12 @@ const ContentWrapper = styled.div`
   align-items: center;
   max-width: 1200px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const TextContent = styled.div`
@@ -91,6 +97,10 @@ const Title = styled.h1`
     100% {
       text-shadow: 0 0 12px rgba(255, 165, 0, 1), 0 0 25px rgba(255, 165, 0, 1);
     }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
   }
 `;
 
@@ -127,6 +137,11 @@ const Card = styled.div`
     }
   }
   
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -135,7 +150,7 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 200px;  /* Adjusted width */
+   width: 200px;  /* Smaller width for mobile */
   height: 200px; /* Adjusted height */
   border-radius: 50%;
   object-fit: cover;
@@ -160,6 +175,11 @@ const Image = styled.img`
     transform: scale(1.1); /* Slight zoom-in effect on hover */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Stronger shadow on hover */
   }
+
+  @media (max-width: 768px) {
+    width: 120px;
+    height: 120px;
+  }
 `;
 
 const LinksContainer = styled.div`
@@ -167,6 +187,16 @@ const LinksContainer = styled.div`
   justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
+
+   img {                    
+    width: 30px;
+    height: 30px;
+
+    @media (max-width: 768px) {
+      width: 25px;
+      height: 25px;
+    }
+  }
 `;
 
 const Link = styled.a`
@@ -248,4 +278,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Hero;
