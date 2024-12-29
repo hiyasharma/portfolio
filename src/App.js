@@ -25,14 +25,15 @@ const App = () => {
       <Section id="projects">
         <Projects />
       </Section>
-      <Section id="blogs">
-        <Blogs />
-      </Section>
+      
       <Section id="education">
         <Education />
       </Section>
       <Section id="achievements">
         <Achievements />
+      </Section>
+      <Section id="blogs">
+        <Blogs />
       </Section>
       <Section id="contact">
         <Contact />

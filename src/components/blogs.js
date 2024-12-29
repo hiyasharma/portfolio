@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // Styled button for the "Read the full blog" link
 
- const BlogButton = styled.a`
+const BlogButton = styled.a`
   display: inline-block;
   padding: 0.8rem 2rem;
   background-color: white;
@@ -115,24 +115,35 @@ const Blogs = () => {
       <ContentWrapper>
         {/* Example of a blog post */}
         <BlogPost>
-          <BlogTitle>Building Your First Java Web Application: A Step-by-Step Guide
-          </BlogTitle>
+          <BlogTitle>Building Your First Java Web Application: A Step-by-Step Guide</BlogTitle>
           <BlogContent>
-          This guide takes you through the process of creating your first Java web application. Using NetBeans, Apache Tomcat, and MySQL, you'll learn how to set up a development environment, build a simple web application, and connect it to a database. By the end, you'll have the foundational skills to develop and deploy Java web applications with confidence....         </BlogContent>
+            This guide takes you through the process of creating your first Java web application. Using NetBeans, Apache Tomcat, and MySQL, you'll learn how to set up a development environment, build a simple web application, and connect it to a database. By the end, you'll have the foundational skills to develop and deploy Java web applications with confidence....
+          </BlogContent>
           <BlogButton href="https://first-java-webapp.blogspot.com/2024/12/building-your-first-java-web.html" target="_blank" rel="noopener noreferrer">
-        Read the full blog
-      </BlogButton>
+            Read the full blog
+          </BlogButton>
           <AuthorDate>By: Hiya Sharma | Date: 17th Dec 2024</AuthorDate>
+        </BlogPost>
+
+        {/* New Blog Post */}
+        <BlogPost>
+          <BlogTitle>Building a Seamless User Registration and Login Workflow in a Java Web Application</BlogTitle>
+          <BlogContent>
+          In this blog, we delve into a common user registration and login workflow for Java web applications. Users fill out a registration form, receive a verification email, and activate their account via a secure link. Once verified, they can log in using their credentials. This guide provides a step-by-step approach to implementing this process efficiently and securely....
+          </BlogContent>
+          <BlogButton href="https://first-java-webapp.blogspot.com/2024/12/building-seamless-user-registration-and.html" target="_blank" rel="noopener noreferrer">
+            Read the full blog
+          </BlogButton>
+          <AuthorDate>By: Hiya Sharma | Date: 29th Dec 2024</AuthorDate>
         </BlogPost>
 
         <BlogPost>
           <BlogTitle>More Blogs to Come</BlogTitle>
           <BlogContent>
-            Stay Updated          </BlogContent>
+            Stay Updated
+          </BlogContent>
         </BlogPost>
       </ContentWrapper>
-
-    
     </BlogsSection>
   );
 };
