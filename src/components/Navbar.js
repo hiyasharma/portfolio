@@ -18,8 +18,8 @@ const Nav = styled.nav`
   border: 2px solid white;
   box-sizing: border-box;
 
-  @media (max-width: 768px) {
-    padding: 0.8rem 1.2rem;
+ @media (max-width: 768px) {
+    padding: 0.5rem; /* Reduced padding for mobile */
   }
 `;
 
@@ -44,16 +44,16 @@ const NavLinks = styled.div`
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 70px;
+    top: 60px; /* Adjust if needed */
     right: 0;
-    background: rgba(0, 0, 0, 0.9);
-    width: 100%;
+    background: #333;
+    width: 100%; /* Full width for mobile */
     padding: 1rem 0;
-    gap: 1.5rem;
-    z-index: 100;
-    border: 2px solid white;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
   }
 `;
+
 
 const StyledLink = styled.a`
   color: white;
@@ -85,12 +85,17 @@ const StyledLink = styled.a`
     width: 100%;
     left: 0;
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem; /* Adjust for mobile */
+  }
 `;
+
 
 const MenuToggle = styled.div`
   display: none;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.2rem;
   cursor: pointer;
 
   span {
@@ -103,6 +108,7 @@ const MenuToggle = styled.div`
     display: flex;
   }
 `;
+
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
