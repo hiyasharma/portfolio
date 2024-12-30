@@ -58,6 +58,11 @@ const HeroSection = styled.div`
   height: 100vh;
   opacity: ${({ isLoaded }) => (isLoaded ? 1 : 0)};
   transition: opacity 1s ease-in-out;
+
+  /* Mobile view: Adjust padding */
+  @media (max-width: 768px) {
+    padding: 1rem; /* Reduced padding for smaller screens */
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -68,9 +73,10 @@ const ContentWrapper = styled.div`
   max-width: 1200px;
   width: 100%;
 
+ /* Mobile view: Stack content vertically */
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: center;
+    
     text-align: center;
   }
 `;
@@ -80,7 +86,11 @@ const TextContent = styled.div`
   padding-left: 2rem;
   text-align: left;
 
-  
+   /* Mobile view: Center text */
+  @media (max-width: 768px) {
+    padding-left: 0; /* Remove padding on small screens */
+    text-align: center; /* Center-align text */
+  }
 `;
 
 const Title = styled.h1`
@@ -103,8 +113,10 @@ const Title = styled.h1`
     }
   }
 
+ /* Mobile view: Adjust font size */
   @media (max-width: 768px) {
-    font-size: 1.8rem;
+    font-size: 2rem; /* Smaller font for mobile */
+    margin-bottom: 2rem; /* Reduced margin */
   }
 `;
 
@@ -114,6 +126,14 @@ const Description = styled.p`
   color: #fff; /* Black text color */
   max-width: 800px;
   margin-bottom: 2rem;
+
+/* Mobile view: Center-align text and adjust size */
+  @media (max-width: 768px) {
+    font-size: 0.7rem; /* Smaller font size for mobile */
+    line-height: 1.3; /* Adjust line height for compact text */
+    margin-bottom: 1rem; /* Reduced margin for mobile view */
+    text-align: center; /* Center-align text for mobile */
+  }
 `;
 
 // New Card component for animated description
@@ -142,15 +162,23 @@ const Card = styled.div`
   }
   
 
+  /* Mobile view: Adjust padding and font size */
   @media (max-width: 768px) {
     padding: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Smaller font for mobile */
+     margin: 10px auto;
   }
 `;
 
 const ImageContainer = styled.div`
   flex: 1;
   text-align: center;
+
+ /* Mobile view: Center the image container */
+  @media (max-width: 768px) {
+    margin-bottom: 1rem; /* Add some margin below on mobile */
+  }
+  
 `;
 
 const Image = styled.img`
@@ -160,6 +188,9 @@ const Image = styled.img`
   object-fit: cover;
   border: 3px solid #000;
   transition: transform 0.5s ease, box-shadow 0.5s ease; /* Added transition for smooth effect */
+
+
+ 
 
   /* Animation to zoom in and apply shadow on page load */
   animation: zoomIn 1s ease-in-out forwards;
@@ -180,9 +211,11 @@ const Image = styled.img`
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Stronger shadow on hover */
   }
 
+/* Mobile view: Adjust image size */
   @media (max-width: 768px) {
-    width: 120px;
-    height: 120px;
+    width: 150px;  /* Smaller image for mobile */
+    height: 150px; /* Smaller image for mobile */
+    margin-top: 3rem;
   }
 `;
 
@@ -191,6 +224,11 @@ const LinksContainer = styled.div`
   justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
+
+  /* Mobile view: Adjust icon size */
+  @media (max-width: 768px) {
+    gap: 1rem; /* Smaller gap between icons */
+  }
 
    img {                    
     width: 30px;
@@ -225,6 +263,32 @@ const Link = styled.a`
     transform: scale(1.1); /* Slight zoom effect on hover */
   }
 `;
+
+const DownloadButton = styled.a`
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1.5rem;
+  background-color:rgb(0, 0, 0); /* Blue button */
+  color: #fff;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color:rgb(92, 94, 121); /* Darker blue on hover */
+  }
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(126, 27, 97, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem; /* Slightly smaller font for mobile */
+    padding: 0.6rem 1.2rem; /* Adjust padding for smaller screens */
+  }
+`;
+
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -264,7 +328,16 @@ const Hero = () => {
                   <Link href="https://medium.com/@hiyasdrive" target="_blank">
                     <img src={require('../assets/images/medium-logo.png')} alt="Medium" />
                   </Link>
+
                 </LinksContainer>
+
+                <DownloadButton href="https://drive.google.com/file/d/16FY-gXsNpzQGK6pnhudJ2Rl8FnCz9k03/view?usp=sharing" target="_blank">
+                Check Out My CV
+          </DownloadButton>
+
+
+                
+    
               </ImageContainer>
               <TextContent>
                 <Title>Let Me Introduce Myself</Title>

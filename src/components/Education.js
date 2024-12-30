@@ -51,6 +51,10 @@ const EducationSection = styled.section`
   text-align: center;
   position: relative; /* for the title shadow animation */
   animation: sectionTitleShadow 1.5s ease-in-out infinite alternate;
+
+   @media (max-width: 768px) { /* Adjust padding for mobile view */
+    padding: 2rem 1rem;
+  }
 `;
 
 // Title for the Education Section with animation and style improvements
@@ -69,7 +73,10 @@ const EducationTitle = styled.h2`
       text-shadow: 0 0 12px rgba(255, 165, 0, 1), 0 0 25px rgba(255, 165, 0, 1);
     }
   }
-  
+ 
+  @media (max-width: 768px) { /* Reduce font size for smaller screens */
+    font-size: 2.5rem;
+  }
  
 `;
 
@@ -80,6 +87,11 @@ const EducationList = styled.div`
   align-items: center;
   gap: 3rem;
   position: relative;
+
+   @media (max-width: 768px) { /* Stack items vertically for mobile view */
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 // Education Card (Circular) with Hover Animation
@@ -104,6 +116,11 @@ const EducationCard = styled.div`
     box-shadow: 0 15px 20px rgba(166, 227, 10, 0.4); // Shadow grows on hover
     border-color: #ff4500; // Change border color on hover
   }
+
+  @media (max-width: 768px) { /* Adjust size for smaller screens */
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 // Education Card Title
@@ -113,6 +130,10 @@ const EducationCardTitle = styled.h3`
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
+
+  @media (max-width: 768px) { /* Reduce font size for smaller screens */
+    font-size: 1.2rem;
+  }
 `;
 
 // Education Card Description
@@ -128,6 +149,11 @@ const EducationLogo = styled.img`
   height: 80px;
   border-radius: 50%;
   margin-bottom: 1rem;
+
+   @media (max-width: 768px) { /* Reduce logo size for smaller screens */
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 // Arrow Connector with Animation for movement
@@ -201,4 +227,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default Education;

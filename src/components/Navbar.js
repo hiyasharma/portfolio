@@ -1,6 +1,5 @@
-import React, { useState } from 'react'; // React and useState for managing state
-import styled from 'styled-components'; // styled-components for styled elements
-
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const Nav = styled.nav`
   display: flex;
@@ -18,21 +17,17 @@ const Nav = styled.nav`
   border: 2px solid white;
   box-sizing: border-box;
 
- @media (max-width: 768px) {
-    padding: 0.5rem; /* Reduced padding for mobile */
+  @media (max-width: 768px) {
+    padding: 0.02rem 1rem;
   }
 `;
 
 const Logo = styled.h1`
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'Dancing Script', cursive;
   margin: 0;
   color: white;
   letter-spacing: 1px;
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
 `;
 
 const NavLinks = styled.div`
@@ -44,16 +39,13 @@ const NavLinks = styled.div`
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 60px; /* Adjust if needed */
+    top: 60px;
     right: 0;
     background: #333;
-    width: 100%; /* Full width for mobile */
+    width: 100%;
     padding: 1rem 0;
-    overflow: hidden;
-    border-radius: 0 0 10px 10px;
   }
 `;
-
 
 const StyledLink = styled.a`
   color: white;
@@ -85,12 +77,7 @@ const StyledLink = styled.a`
     width: 100%;
     left: 0;
   }
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem; /* Adjust for mobile */
-  }
 `;
-
 
 const MenuToggle = styled.div`
   display: none;
@@ -108,7 +95,6 @@ const MenuToggle = styled.div`
     display: flex;
   }
 `;
-
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -141,4 +127,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;

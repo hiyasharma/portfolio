@@ -11,6 +11,11 @@ const ContactSection = styled.div`
   color: white;
   min-height: 100vh;
   position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column; /* Adjust layout for smaller screens */
+    padding: 2rem 1rem;
+  }
 `;
 
 // Wrapper for content and form
@@ -23,6 +28,10 @@ const ContentWrapper = styled.div`
   width: 100%;
   z-index: 2;
   margin-left: -10%;
+
+  @media (max-width: 768px) {
+    margin-left: 0; /* Center align content for mobile */
+  }
 `;
 
 // Title styling
@@ -41,6 +50,10 @@ const Title = styled.h1`
       text-shadow: 0 0 12px rgba(255, 165, 0, 1), 0 0 25px rgba(255, 165, 0, 1);
     }
   }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem; /* Reduce font size for smaller screens */
+  }
 `;
 
 // Form container
@@ -52,6 +65,10 @@ const Form = styled.form`
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 9px 15px rgba(235, 16, 187, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
 `;
 
 // Form group container for each field
@@ -80,6 +97,8 @@ const Input = styled.input`
     outline: none;
     border-color: #3498db;
   }
+
+ 
 `;
 
 // Textarea field for message
@@ -97,6 +116,7 @@ const Textarea = styled.textarea`
     outline: none;
     border-color: #3498db;
   }
+  
 `;
 
 // Submit button
@@ -133,6 +153,11 @@ const ProfileImage = styled.img`
   border: 3px solid #fff;
   object-fit: cover;
   z-index: 1;
+
+   @media (max-width: 768px) {
+    position: static; /* Remove absolute positioning for smaller screens */
+    margin-bottom: 1rem; /* Add spacing below image */
+  }
 `;
 
 // Container for the contact details (phone number and email)
@@ -144,6 +169,11 @@ const ContactDetails = styled.div`
   font-size: 1rem;
   text-align: center;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    position: static; /* Remove absolute positioning for smaller screens */
+    margin-top: 1rem; /* Add spacing above details */
+  }
 `;
 
 // Styling for each contact detail (phone number and email)
@@ -256,4 +286,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact;
