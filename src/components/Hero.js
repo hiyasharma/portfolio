@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';  // Import the Navbar component
 
+
+
+
+
 // Styled Components for Animation
 const AnimationWrapper = styled.div`
   display: flex;

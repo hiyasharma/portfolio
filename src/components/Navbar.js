@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react'; // React and useState for managing state
+import styled from 'styled-components'; // styled-components for styled elements
+
 
 const Nav = styled.nav`
   display: flex;
@@ -18,16 +19,20 @@ const Nav = styled.nav`
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.2rem;
   }
 `;
 
 const Logo = styled.h1`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: 'Dancing Script', cursive;
   margin: 0;
   color: white;
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const NavLinks = styled.div`
@@ -39,11 +44,14 @@ const NavLinks = styled.div`
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 0;
-    background: #333;
+    background: rgba(0, 0, 0, 0.9);
     width: 100%;
     padding: 1rem 0;
+    gap: 1.5rem;
+    z-index: 100;
+    border: 2px solid white;
   }
 `;
 
@@ -82,7 +90,7 @@ const StyledLink = styled.a`
 const MenuToggle = styled.div`
   display: none;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.3rem;
   cursor: pointer;
 
   span {
